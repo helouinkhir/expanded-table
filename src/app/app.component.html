@@ -1,8 +1,9 @@
+<div class="scrollit">
 <table *ngIf="data">
   <thead>
   <tr>
-    <th class="first-col"></th>
-    <th class="second-col">Header Dates</th>
+    <th class="top-col-first"></th>
+    <th class="top-col-second ">Header Dates</th>
     <th  *ngFor="let ev of data.expectedVoteValues">{{ev.date}}</th>
   </tr>
 </thead>
@@ -34,5 +35,5 @@
 </ng-container>
 </table>
 
-
+</div>
 

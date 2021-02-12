@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -10,8 +10,7 @@ import { MatSliderModule } from '@angular/material/slider';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    MatSliderModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
