@@ -1,0 +1,24 @@
+table {
+  font-family: arial, sans-serif;
+border: none;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+.expand{
+  padding: 0;
+}
+.expanded{
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+th {
+  background-color:#999690;
+  color:#fff;
+}
+
+

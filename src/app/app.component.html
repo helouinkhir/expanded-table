@@ -1,0 +1,34 @@
+<table *ngIf="data">
+  <tr>
+    <th style="width: 3rem"></th>
+    <th style="width: 30%">Header Dates</th>
+    <th  *ngFor="let ev of data.expectedVoteValues">{{ev.date}}</th>
+  </tr>
+  <tr>
+  <td style="width: 3rem"></td>
+  <td  style="width: 30%">
+      Expected Total Vote
+  </td>
+  <td class="center" *ngFor="let ev of data.expectedVoteValues">{{ev.count}}</td>
+  </tr>
+<ng-container  *ngFor="let row of rowData; index as i">
+  <tr>
+    <td><span class="expanded" (click)="expand[i]=!expand[i]"><i class='fa' [ngClass]="{'fa-angle-right':!expand[i] ,'fa-angle-down':expand[i]}"></i></span></td>
+    <td  style="width: 30%">{{row.name}}</td>
+    <td *ngFor="let vote of row.votes">{{vote}}</td>
+  </tr>
+  <tr *ngIf="expand[i]">
+    <td [attr.colspan]="data.expectedVoteValues.length+2" class="expand">
+      <table>
+        <tr  *ngFor="let state of row.states">
+          <td style="width: 3rem"></td>
+          <td  style="width: 30%">{{state.name}}</td>
+          <td  *ngFor="let vote of state.votes">{{vote}}</td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+</ng-container>
+</table>
+
