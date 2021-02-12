@@ -1,7 +1,7 @@
 table {
   font-family: arial, sans-serif;
 border: none;
-  width: 100%;
+  width: 2000px;
 }
 
 td, th {
@@ -20,7 +20,9 @@ th {
   background-color:#999690;
   color:#fff;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
+  z-index: 1;
 }
 .sticky-col {
   position: -webkit-sticky;
@@ -31,6 +33,7 @@ th {
   min-width: 100px;
   max-width: 100px;
   left: 0px;
+  z-index: 2;
 }
 
 .second-col {
@@ -38,6 +41,11 @@ th {
   min-width: 150px;
   max-width: 150px;
   left: 100px;
+  z-index: 2;
+}
+.value-col{
+  left: 0px;
+  z-index: 1;
 }
 
 
