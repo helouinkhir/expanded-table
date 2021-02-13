@@ -18,15 +18,17 @@
   <tr>
     <td class="sticky-col first-col"><span class="expanded" (click)="expand[i]=!expand[i]"><i class='fa' [ngClass]="{'fa-angle-right':!expand[i] ,'fa-angle-down':expand[i]}"></i></span></td>
     <td class="sticky-col second-col" >{{row.name}}</td>
-    <td *ngFor="let vote of row.votes" class="value-col" >{{vote}}</td>
+    <td *ngFor="let vote of votes[i]" class="value-col" >{{vote}}</td>
   </tr>
   <tr *ngIf="expand[i]">
     <td [attr.colspan]="data.expectedVoteValues.length+2" class="expand">
       <table>
-        <tr  *ngFor="let state of row.states">
+        <tr  *ngFor="let state of row.states; index as j">
           <td class="sticky-col first-col" style="width: 3rem"></td>
           <td class="sticky-col second-col" >{{state.name}}</td>
-          <td  *ngFor="let vote of state.votes" class="value-col" >{{vote}}</td>
+          <td  *ngFor="let vote of state.votes; index as k" class="value-col" >
+            <input  type="text" [value]="vote" (change)="updatevotes(i,j,k,$event.target.value)" >
+          </td>
 
         </tr>
       </table>
